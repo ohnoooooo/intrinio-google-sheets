@@ -6,8 +6,6 @@ With the Intrinio Google Sheets add-on, you can access information on companies,
 
 # Quick Installation
 
-<iframe allowfullscreen="" src="https://www.youtube.com/embed/0zup16FRRuo" frameborder="0" height="315" width="420"></iframe>
-
 1.  Install the [Google Sheet add-on](https://chrome.google.com/webstore/detail/intrinio-financial-data/pknhlgmhmipaklmkpbfiondbgopiepge?authuser=0)
 2.  Visit [www.intrinio.com](http://www.intrinio.com)
 3.  Click register and enter email (or just [click on this link](https://www.intrinio.com/app#/auth?showing=register))
