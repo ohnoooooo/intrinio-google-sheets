@@ -1,0 +1,48 @@
+<script>
+  function updateUrl(url) {
+    var div = document.getElementById('output');
+    div.innerHTML = '<div style="font-size: 14px; padding-top: 10px; color: #86b539;"><p>Thank you! <p>You now have access to the add-on.</div>'; 
+    google.script.run.showFunctionsSidebar();
+  };
+  function onFailure(url) {
+    var div = document.getElementById('output');
+    div.innerHTML = '<div style="font-size: 14px; padding-top: 10px; color: #B33A3A;"><p>Your API Key was not valid!</div>'; 
+  }
+</script>
+
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+
+<style>
+.branding-below {
+  bottom: 56px;
+  top: 0;
+}
+</style>
+
+<a href="https://www.intrinio.com/app#/auth?showing=register" target="_blank" style ="padding-top: 10px; padding-bottom: 10px;">Register to gain access to your API Keys.</a>
+
+<form id="apiKeys" style="margin-top: 10px;">
+  <div class="block form-group">
+    <label for="lbluserAPIKey"><b>API USERNAME:</b></label>
+    <input type="text" name="userAPIKey" placeholder="API Username" size=38>
+  </div>
+
+  <div class="block form-group">
+    <label for="lblcollaboratorAPIKey"><b>API PASSWORD:</b></label>
+    <input type="text" name="collaboratorAPIKey" placeholder="API Password" size=38>
+  </div>
+  
+  <input type="button" class="action" name="apiKeySubmit" value="Submit"
+      onclick="google.script.run
+          .withSuccessHandler(updateUrl)
+          .withFailureHandler(onFailure)
+          .processForm(this.parentNode)" style="display: block; margin-top: 15px;"/>
+</form>
+
+<div id="output"></div>
+
+<a href="https://www.intrinio.com/" target="_blank">
+<div class="sidebar bottom" style ="margin: 0px; padding-left: 0px; padding-right: 0px; padding-bottom: 10px; width: 250px;">
+  <img src="https://s3.amazonaws.com/intrinio-production/images/Intrinio+Logo/intrinio-logo-smaller.png" style="height:30px;"/>
+</div>
+</a>
