@@ -13,12 +13,12 @@ function onOpen(e) {
     var userProperties = PropertiesService.getUserProperties();
     
     try {
-      var test = IntrinioDataPoint("GOOGL","ticker");
+      var test = IntrinioVerify("ORCL");
     } catch(e) {
       var test = "na";
     }
     
-    if(test === "GOOGL") {
+    if(test === "ORCL") {
       var menu = SpreadsheetApp.getUi().createAddonMenu();
       var properties = PropertiesService.getDocumentProperties();
       menu.addItem('Intrinio Functions', 'showFunctionsSidebar');
@@ -39,12 +39,12 @@ function getStarted() {
   var userProperties = PropertiesService.getUserProperties();
   
   try {
-    var test = IntrinioDataPoint("GOOGL","ticker");
+    var test = IntrinioVerify("ORCL");
   } catch(e) {
     var test = "na";
   }  
-    
-  if(test === "GOOGL") {
+  Logger.log(test)  
+  if(test === "ORCL") {
     var menu = SpreadsheetApp.getUi().createAddonMenu();
     var properties = PropertiesService.getDocumentProperties();
     menu.addItem('Intrinio Functions', 'showFunctionsSidebar');
@@ -77,6 +77,8 @@ function processForm(formObject) {
   var input_username = formObject.userAPIKey;
   var input_password = formObject.collaboratorAPIKey;
   
+
+  
   var username = userProperties.getProperty('INTRINIO_USER_API_KEY');
   if(username != null){
     userProperties.deleteProperty('INTRINIO_USER_API_KEY');
@@ -98,8 +100,9 @@ function processForm(formObject) {
   var documentProperties = PropertiesService.getDocumentProperties();
   documentProperties.deleteAllProperties();
   
-  var test = IntrinioDataPoint("GOOGL","ticker");
-  if(test === "GOOGL") {
+  var test = IntrinioVerify("ORCL");
+  
+  if(test === "ORCL") {
     var menu = SpreadsheetApp.getUi().createAddonMenu();
     var properties = PropertiesService.getDocumentProperties();
     menu.addItem('Intrinio Functions', 'showFunctionsSidebar');
@@ -344,6 +347,54 @@ function IntrinioFinancials(ticker,statement,fiscal_year,fiscal_period,tag,round
 function IntrinioStandardizedFinancials(ticker,statement,fiscal_year,fiscal_period,tag,rounding) {
   return IntrinioFinancials(ticker,statement,fiscal_year,fiscal_period,tag,rounding)
 }
+
+function IntrinioVerify(ticker) { 
+  if(ticker){
+    if(ticker){
+      var documentProperties = PropertiesService.getDocumentProperties();
+      
+      var Key = "IV" + "_" + ticker;
+      
+      var value = documentProperties.getProperty(Key);
+      
+      if(value){
+        var randnumber = Math.max(250, Math.random()*500);
+        Utilities.sleep(randnumber);
+        Utilities.sleep(randnumber);
+        
+        var data = JSON.parse(value);
+        return data["value"];
+      } else {
+        var userProperties = PropertiesService.getUserProperties();
+        var username = userProperties.getProperty('INTRINIO_USER_API_KEY');
+        var password = userProperties.getProperty('INTRINIO_COLLABORATOR_KEY');
+        
+        var url = 'https://www.intrinio.com/api/companies/verify?'
+        + 'ticker=' + ticker;
+        var headers = {
+          "headers": {
+            "Authorization": "Basic " + Utilities.base64Encode(username + ":" + password)
+          },
+        };
+        
+        var response = UrlFetchApp.fetch(url, headers);
+        
+        var randnumber = Math.max(500, Math.random()*1000);
+        Utilities.sleep(randnumber);
+        Utilities.sleep(randnumber);
+        
+        var json = response.getContentText();
+        documentProperties.setProperty(Key, json);
+        var data = JSON.parse(json);
+        return data["ticker"];
+      }
+    }else{
+      return ""
+    }
+  }else{
+    return ""
+  }
+};
 
 function IntrinioResetDocCache() {
   var documentProperties = PropertiesService.getDocumentProperties();
