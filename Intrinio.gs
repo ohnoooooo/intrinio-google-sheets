@@ -145,7 +145,7 @@ function IntrinioDataPoint(ticker, item) {
         var username = userProperties.getProperty('INTRINIO_USER_API_KEY');
         var password = userProperties.getProperty('INTRINIO_COLLABORATOR_KEY');
         
-        var url = 'https://www.intrinio.com/api/data_point?'
+        var url = 'https://api.intrinio.com/data_point?'
         + 'identifier=' + ticker
         + '&item=' + item;
         var headers = {
@@ -205,7 +205,7 @@ function IntrinioFundamentals(ticker,statement,period_type,sequence,item) {
         var username = userProperties.getProperty('INTRINIO_USER_API_KEY');
         var password = userProperties.getProperty('INTRINIO_COLLABORATOR_KEY');
         
-        var url = 'https://www.intrinio.com/api/fundamentals/standardized?'
+        var url = 'https://api.intrinio.com/fundamentals/standardized?'
         + 'ticker=' + ticker
         + '&statement=' + statement
         + '&type=' + period_type;
@@ -291,7 +291,7 @@ function IntrinioFinancials(ticker,statement,fiscal_year,fiscal_period,tag,round
           var username = userProperties.getProperty('INTRINIO_USER_API_KEY');
           var password = userProperties.getProperty('INTRINIO_COLLABORATOR_KEY');
           
-          var url = 'https://www.intrinio.com/api/financials/standardized?'
+          var url = 'https://api.intrinio.com/financials/standardized?'
           + 'ticker=' + ticker
           + '&statement=' + statement
           + '&fiscal_year=' + fiscal_year
@@ -369,7 +369,7 @@ function IntrinioVerify(ticker) {
         var username = userProperties.getProperty('INTRINIO_USER_API_KEY');
         var password = userProperties.getProperty('INTRINIO_COLLABORATOR_KEY');
         
-        var url = 'https://www.intrinio.com/api/companies/verify?'
+        var url = 'https://api.intrinio.com/companies/verify?'
         + 'ticker=' + ticker;
         var headers = {
           "headers": {
