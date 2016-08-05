@@ -43,7 +43,6 @@ function getStarted() {
   } catch(e) {
     var test = "na";
   }  
-  Logger.log(test)  
   if(test === "ORCL") {
     var menu = SpreadsheetApp.getUi().createAddonMenu();
     var properties = PropertiesService.getDocumentProperties();
@@ -101,7 +100,6 @@ function processForm(formObject) {
   documentProperties.deleteAllProperties();
   
   var test = IntrinioVerify("ORCL");
-  
   if(test === "ORCL") {
     var menu = SpreadsheetApp.getUi().createAddonMenu();
     var properties = PropertiesService.getDocumentProperties();
@@ -378,7 +376,6 @@ function IntrinioVerify(ticker) {
         };
         
         var response = UrlFetchApp.fetch(url, headers);
-        
         var randnumber = Math.max(500, Math.random()*1000);
         Utilities.sleep(randnumber);
         Utilities.sleep(randnumber);

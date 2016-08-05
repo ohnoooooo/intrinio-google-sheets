@@ -19,7 +19,7 @@ Once you select a function, the required parameters and an example will show you
 <li><strong>ticker - </strong>The company's ticker symbol (i.e. "AAPL")</li>
 <li><strong>item - </strong>The data field requested for the company. A list of all tags can be found <a href="http://community.intrinio.com/docs/data-point-tags/" target="_blank"> here </a> (i.e. "trailing_dividend_yield" returns the current dividend yield, "current_yr_ave_eps_est" returns the current fiscal year average Wall Street consensus EPS estimate)</li>
 </ul>
-Example: =IntrinioDataPoint("GOOGL","close_price") -> $538.65 (The last close price for Google Inc was $538.65)
+<strong>Example:</strong>  =IntrinioDataPoint("GOOGL","close_price") -> $538.65 (The last close price for Google Inc was $538.65)
 </div>
 <br>
 <p>
@@ -32,7 +32,7 @@ Example: =IntrinioDataPoint("GOOGL","close_price") -> $538.65 (The last close pr
 <li><strong>sequence - </strong>The sequence order of the fundamental from newest to oldest (0..last available)</li>
 <li><strong>item - </strong>The item you are selecting (i.e. "fiscal_year" returns 2014, "fiscal_period" returns "FY", "end_date" returns the last date of the period)</li>
 </ul>
-Example: =IntrinioFundamentals("GOOGL","income_statement","FY",0,"fiscal_year") -> 2014 (The last fiscal year for Google Inc was 2014)
+<strong>Example:</strong> =IntrinioFundamentals("GOOGL","income_statement","FY",0,"fiscal_year") -> 2014 (The last fiscal year for Google Inc was 2014)
 </div>
 <br>
 <p>
@@ -46,13 +46,13 @@ Example: =IntrinioFundamentals("GOOGL","income_statement","FY",0,"fiscal_year") 
 <li><strong>tag - </strong> The selected tag within the statement. A list of all tags can be found <a href="http://community.intrinio.com/docs/industrial-tags/" target="_blank"> here </a>(i.e. "totalrevenue", "netppe", "totalequity","purchaseofplantpropertyandequipment", "netchangeincash")</li>
 <li><strong>rounding - </strong> Round the value (blank or "A" for actuals, "K" for thousands, "M" for millions, "B" for billions)</li>
 </ul>
-Example: =IntrinioFinancials("GOOGL","income_statement",0,"FY","totalrevenue","M") -> $66,001 (The total revenues for Google Inc in the most recent fiscal year (2014) was $66,001 million)
+<strong>Example:</strong>  =IntrinioFinancials("GOOGL","income_statement",0,"FY","totalrevenue","M") -> $66,001 (The total revenues for Google Inc in the most recent fiscal year (2014) was $66,001 million)
 </div>
 <br>
-<p>Our <a href="http://intrin.io/18kbJRM" target="_blank"> Intrinio Google Sheet add-on template</a> 
+<p>Our <a href="https://docs.google.com/spreadsheets/d/1oaBZJmd4-QIPSMykp6gxb7XnN5pUm24gtE4ry8g6_DY" target="_blank"> Intrinio Google Sheet add-on template</a> 
 illustrates how to utilize the Intrinio add-on to pull in over 5,000 data points per company.</p>
 
-<p>If you have any questions, please feel free to <a href="http://community.intrinio.com/contact/" target="_blank"> contact us</a>.</p>
+<p>If you have any questions, please feel free to <a href="http://www.intrinio.com/" target="_blank"> contact us</a> by clicking on the chat bubble in the bottom right side of our site.</p>
 
 <a href="https://www.intrinio.com/" target="_blank">
   <img src="https://s3.amazonaws.com/intrinio-production/images/Intrinio+Logo/intrinio-logo-smaller.png" style="height:30px;"/>
