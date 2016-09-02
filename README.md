@@ -77,7 +77,6 @@ Returns a list of available standardized fundamentals (fiscal year and fiscal pe
 
 2014-09-27
 
-
 =IntrinioFundamentals("AAPL","balance_sheet","QTR",0,"fiscal_period")
 
 Q3
