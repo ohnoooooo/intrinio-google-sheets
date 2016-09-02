@@ -32,7 +32,7 @@ Below are all of the Google Sheets custom functions for accessing the Intrinio A
 ## IntrinioDataPoint
 
 **=`IntrinioDataPoint(identifier,item)`**  
-Returns that most recent data point for a selected identifier (ticker symbol, CIK ID, Federal Reserve Economic Data Series ID, etc.) for a selected tag. The complete list of tags available through this function are available **<a href="http://docs.intrinio.com/tags.html#data-point" target="_blank">Intrinio Data Point Tags</a>. Income statement, cash flow statement, and ratios are returned as trailing twelve months values. All other data points are returned as their most recent value, either as of the last release financial statement or the most recent reported value.
+Returns that most recent data point for a selected identifier (ticker symbol, CIK ID, Federal Reserve Economic Data Series ID, etc.) for a selected tag. The complete list of tags available through this function are available **<a href="http://docs.intrinio.com/tags#data-point" target="_blank">Intrinio Data Point Tags</a>. Income statement, cash flow statement, and ratios are returned as trailing twelve months values. All other data points are returned as their most recent value, either as of the last release financial statement or the most recent reported value.
 
 ### Parameters
 
@@ -62,8 +62,8 @@ AAPL
 0.0612
 ```
 
-*   **identifier** - an identifier for the company or data point, including the SEC CIK ID, FRED Series ID, or Damodaran ERP: **<a href="http://www.sec.gov/edgar/searchedgar/cik.htm" target="_blank">CENTRAL INDEX KEY</a> | <a href="http://docs.intrinio.com/master/economic-indices.html" target="_blank">ECONOMIC INDICES</a> | <a href="http://docs.intrinio.com/tags.html#dmd-erp" target="_blank">DAMODARAN ERP</a> | <a href="http://docs.intrinio.com/master/us-securities.html#home" target="_blank">TICKER SYMBOL</a> | <a href="http://docs.intrinio.com/master/stock-indices.html" target="_blank">INDEX SYMBOL</a>**
-*   **item** - the specified standardized tag or series ID requested: **<a href="http://docs.intrinio.com/tags.html#data-point" target="_blank">INTRINIO DATA POINT TAGS</a> | <a href="http://docs.intrinio.com/tags.html#economic-data" target="_blank">ECONOMIC TAGS</a> | <a href="http://docs.intrinio.com/tags.html#dmd-erp" target="_blank">DAMODARAN ERP</a>**
+*   **identifier** - an identifier for the company or data point, including the SEC CIK ID, FRED Series ID, or Damodaran ERP: **<a href="http://www.sec.gov/edgar/searchedgar/cik.htm" target="_blank">CENTRAL INDEX KEY</a> | <a href="http://docs.intrinio.com/master/economic-indices" target="_blank">ECONOMIC INDICES</a> | <a href="http://docs.intrinio.com/tags#dmd-erp" target="_blank">DAMODARAN ERP</a> | <a href="http://docs.intrinio.com/master/us-securities#home" target="_blank">TICKER SYMBOL</a> | <a href="http://docs.intrinio.com/master/stock-indices" target="_blank">INDEX SYMBOL</a>**
+*   **item** - the specified standardized tag or series ID requested: **<a href="http://docs.intrinio.com/tags#data-point" target="_blank">INTRINIO DATA POINT TAGS</a> | <a href="http://docs.intrinio.com/tags#economic-data" target="_blank">ECONOMIC TAGS</a> | <a href="http://docs.intrinio.com/tags#dmd-erp" target="_blank">DAMODARAN ERP</a>**
 
 ## IntrinioFundamentals
 
@@ -86,7 +86,7 @@ Q3
 2015
 ```
 
-*   **ticker** - the stock market ticker symbol associated with the companies common stock securities: **<a href="http://docs.intrinio.com/master/us-securities.html#home" target="_blank">TICKER SYMBOL</a>**
+*   **ticker** - the stock market ticker symbol associated with the companies common stock securities: **<a href="http://docs.intrinio.com/master/us-securities#home" target="_blank">TICKER SYMBOL</a>**
 *   **statement** - the financial statement requested, options include the income statement, balance sheet, statement of cash flows and calculated metrics and ratios : **`income_statement | balance_sheet | cash_flow_statement | calculations`**
 *   **period_type** - the type of periods requested - includes fiscal years for annual data, quarters for quarterly data and trailing twelve months for annual data on a quarterly basis: **`FY | QTR | TTM | YTD`**
 *   **sequence** - an integer 0 or greater for calling a single fundamental from the first entry:**`0..last available`**
@@ -116,9 +116,11 @@ For example, it is possible to compare total revenues between two companies as o
 37,037
 ```
 
-*   **ticker** - the stock market ticker symbol associated with the companies common stock securities: **<a href="http://docs.intrinio.com/master/us-securities.html#home" target="_blank">TICKER SYMBOL</a>**
+*   **ticker** - the stock market ticker symbol associated with the companies common stock securities: **<a href="http://docs.intrinio.com/master/us-securities#home" target="_blank">TICKER SYMBOL</a>**
 *   **statement** - the financial statement requested, options include the income statement, balance sheet, statement of cash flows and calculated metrics and ratios : **`income_statement | balance_sheet | cash_flow_statement | calculations`**
 *   **fiscal_year** - the fiscal year associated with the fundamental OR the sequence of the requested fundamental (i.e. 0 is the first available fundamental associated with the fiscal period type):**`YYYY`** OR **`0..last available`**
 *   **fiscal_period** - the fiscal period associated with the fundamental, or the fiscal period type in association with the sequence selected in the fiscal year parameter: **`FY | Q1 | Q2 | Q3 | Q4 | Q1TTM | Q2TTM | Q3TTM | Q2YTD | Q3YTD `** OR **`FY | QTR | YTD | TTM`**
-*   **tag** - the specified standardized tag requested: **<a href="http://docs.intrinio.com/tags.html#industrial" target="_blank">STANDARDIZED INDUSTRIAL TAGS</a> | <a href="http://docs.intrinio.com/tags.html#financial" target="_blank">STANDARDIZED FINANCIAL TAGS</a>**
+*   **tag** - the specified standardized tag requested: **<a href="http://docs.intrinio.com/tags#industrial" target="_blank">STANDARDIZED INDUSTRIAL TAGS</a> | <a href="http://docs.intrinio.com/tags#financial" target="_blank">STANDARDIZED FINANCIAL TAGS</a>**
 *   **rounding** (optional, actuals by default) - round the returned value (actuals, thousands, millions, billions):**`A | K | M | B`**
+
+
