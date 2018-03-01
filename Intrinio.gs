@@ -417,3 +417,12 @@ function showAlert() {
 
   var result = ui.alert('The data in this spreadsheet will refresh shortly',ui.ButtonSet.OK);
 }
+
+function refresh(input) {
+  
+  var randnumber = Math.max(100, Math.random()*1000);
+  Utilities.sleep(randnumber);
+  
+  return input;
+  
+}
